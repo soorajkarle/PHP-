@@ -1,0 +1,37 @@
+7.	Write a PHP program to check whether the given string is palindrome or not.
+
+<html>
+<body>
+<form action=""method="POST">
+Enter the string:<input type="text"name="string"><br>
+<input type="submit"name="submit"value="submit">
+<input type="submit"name="clear"value="clear">
+<?php if(isset($_POST["submit"]))
+{
+$str1=$_POST['string'];
+$str2=$_POST['string'];
+echo "</br>The string is".$str1."</br>";
+$rep=str_replace('','',$str1);
+echo "Replace string is".$rep."</br>";
+$lower=strtolower($rep); echo"Lower string is".$lower."</br>";
+$prog=preg_replace ('/[^A-Z,a-z,0-9\-]/',"",$lower); echo"Replace lower string is".$prog."</br>";
+$rev=strrev($prog); echo"Reverse is".$rev."</br>"; if($str2==$rev)
+{
+echo"The Given string".$str2."is palandrome";
+}
+else
+{
+echo"The Given string".$str2."is not palandrome";
+}
+}
+elseif(isset($_POST["clear"]))
+{
+$str1="";
+}
+?>
+</form>
+</body>
+</html>
+
+
+
