@@ -1,0 +1,17 @@
+3.	Write a PHP program demonstrate array concept to store marks of three students in three subjects
+
+<html>
+<head>
+<title>Student array</title>
+</head>
+<body>
+<?php
+$marks=array("ramesh"=>array("java"=>95,"se"=>35,"wcn"=>43),"suresh"=>array("java"=>95," se"=>35,"wcn"=>43),"gopal"=>array("java"=>95,"se"=>35,"wcn"=>43));
+echo"Marks of ramesh in java:".$marks['ramesh']['java']."<br>"; echo"Marks of ramesh in se:".$marks['ramesh']['se']."<br>"; echo"Marks of ramesh in wcn:".$marks['ramesh']['wcn']."<br>"; echo"Marks of suresh in java:".$marks['suresh']['java']."<br>"; echo"Marks of suresh in se:".$marks['suresh']['se']."<br>"; echo"Marks of suresh in wcn:".$marks['suresh']['wcn']."<br>"; echo"Marks of gopal in java:".$marks['gopal']['java']."<br>"; echo"Marks of gopal in se:".$marks['gopal']['se']."<br>"; echo"Marks of gopal in wcn:".$marks['gopal']['wcn']."<br>";
+?>
+</body>
+</html>
+
+
+
+
