@@ -1,0 +1,77 @@
+8.	Write a PHP script to insert and display values from different input fields.
+
+<html>
+<head></head>
+<body>
+<form action="" method="POST">
+<table border="1">
+<tr><td>Name:</td><td><input type="text" name="name"></td></tr>
+<tr><td>Address</td>
+<td><textarea rows="6" cols="20" name="address"></textarea>
+</td></tr>
+<tr>
+<td>DOB</td>
+<td><select name="day">
+<option value="day">day</option>
+<?php for($day=1;$day<=31;$day++)
+echo"<option value=$day>$day</option>";
+?>
+</select>
+<select name="month">
+<option value="month">month</option>
+<?php for($month=1;$month<=12;$month++)
+echo"<option value=$month>$month</option>";
+?>
+</select>
+<select name="year">
+<option value="year">year</option>
+<?php for($year=1990;$year<=2010;$year++) echo"<option value=$year>$year</option>";
+?>
+</select>
+</td>
+</tr>
+<tr>
+<td>Gender</td>
+<td><input type="radio" name="gender" value="male">Male
+<input type="radio" name="gender" value="female">Female
+</td>
+</tr>
+<tr>
+<td>Hobbies</td>
+<td><select name=hobbies[] multiple>
+<option value="coding">coding</option>
+
+
+ 
+<option value="drawing">drawing</option>
+<option value="travelling">travelling</option>
+<option value="videogames">videogames</option>
+</select>
+</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="agree" value="agree">agree</td>
+<?php if(isset($_POST['agree'])) echo"<td>Agreed form</td>";
+?>
+</tr>
+<tr>
+<td><input type="submit" name="submit" value="submit"></td>
+<td><input type="submit" name="clear" value="clear"></td>
+</tr>
+<?php if(isset($_POST["submit"]))
+{
+$name=$_POST['name'];
+$add=$_POST['address'];
+$day=$_POST['day'];
+$month=$_POST['month'];
+$year=$_POST['year'];
+$gender=$_POST['gender'];
+$hob=$_POST['hobbies']; echo"<tr><td>NAME</td><td>".$name."</td></tr>"; echo"<tr><td>ADDRESS</td><td>".$add."</td></tr>"; echo"<tr><td>DATE</td><td>".$day."-";
+echo $month."-"; echo$year."</td></tr>";
+echo"<tr><td>GENDER</td><td>".$gender."</td></tr>"; echo"<tr><td>HOBBIES</td>"; for($i=0;$i<count($hob);$i++) echo"<td>".$hob[$i]."</td></tr><td>";
+}
+?>
+</table>
+</form>
+</body>
+</html>
