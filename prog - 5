@@ -1,0 +1,52 @@
+5.	Write a PHP program to demonstrate $ POST method and display pattern.
+
+<html>
+<head>
+<title>STAR</title>
+</head>
+<body>
+<h2>PYRAMID</h2>
+<?php if(isset($_POST["submit"]))
+{
+$val=$_POST["val"];
+$symbol=$_POST["symbol"];
+}
+elseif(isset($_POST["clear"]))
+{
+$val="";
+$symbol="";
+}
+?>
+<form method="POST">
+enter the loop number<input type="text"name="val"value="<?php echo $val;?>"/></br> enter the symbol<input type="text"name="symbol"value="<?php echo $symbol;?>"/></br>
+<input type="submit"name="submit">
+<input type="submit"name="clear"value="reset">
+</form>
+<?php
+if($val and $symbol)
+{
+if(is_numeric($val))
+{
+for($i=1;$i<=$val;$i++)
+{
+for($j=1;$j<=$i;$j++)
+{
+echo"&nbsp".$symbol;
+}
+echo"</br>";
+}
+}
+else
+{
+echo"enter loop in digits";
+}
+
+ 
+}
+?>
+</body>
+</html>
+
+
+
+
